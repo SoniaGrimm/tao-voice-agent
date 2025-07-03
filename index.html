@@ -14,7 +14,6 @@
       align-items: center;
       font-family: "Comic Sans MS", cursive, sans-serif;
     }
-
     #start-button {
       padding: 16px 32px;
       font-size: 1.2rem;
@@ -23,23 +22,20 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: background-color 0.3s ease;
     }
-
     #start-button:hover {
       background-color: #574fd6;
     }
   </style>
 </head>
 <body>
-
   <button id="start-button">🎤 Démarrer la discussion</button>
-
-  <script type="module">
-    document.getElementById('start-button').addEventListener('click', async () => {
+  <script>
+    document.getElementById('start-button').addEventListener('click', () => {
       window.voiceflow = {
-        versionID: "67e26f0e6b6eed36d51ef2bc", // Ton vrai ID
+        versionID: "67e26f0e6b6eeed36d51ef2bc", // Ton vrai Version ID
         assistant: {
           title: "TAO",
           color: "#6C63FF"
@@ -47,17 +43,14 @@
         url: "https://general-runtime.voiceflow.com",
         enableMic: true
       };
-
-      // Charge dynamiquement le bundle Voiceflow
       const script = document.createElement('script');
       script.type = "module";
       script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
       document.body.appendChild(script);
 
-      // Masque le bouton après lancement
+      // Option : cacher le bouton après lancement
       document.getElementById('start-button').style.display = 'none';
     });
   </script>
-
 </body>
 </html>
