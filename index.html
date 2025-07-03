@@ -33,24 +33,24 @@
 <body>
   <button id="start-button">🎤 Démarrer la discussion</button>
   <script>
-    document.getElementById('start-button').addEventListener('click', () => {
-      window.voiceflow = {
-        versionID: "67e26f0e6b6eeed36d51ef2bc", // Ton vrai Version ID
-        assistant: {
-          title: "TAO",
-          color: "#6C63FF"
-        },
-        url: "https://general-runtime.voiceflow.com",
-        enableMic: true
-      };
-      const script = document.createElement('script');
-      script.type = "module";
-      script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
-      document.body.appendChild(script);
+  document.getElementById('start-button').addEventListener('click', () => {
+    window.voiceflow = {
+      versionID: "67e26f0e6b6eeed36d51ef2bc", // Ton vrai version ID
+      assistant: {
+        title: "TAO",
+        color: "#6C63FF"
+      },
+      url: "https://general-runtime.voiceflow.com",
+      enableMic: true
+    };
 
-      // Option : cacher le bouton après lancement
-      document.getElementById('start-button').style.display = 'none';
-    });
+    const script = document.createElement('script');
+    script.type = "module";
+    script.src = "https://cdn.voiceflow.com/v2/assets/voiceflow-agent.js";
+    document.body.appendChild(script);
+
+    document.getElementById('start-button').style.display = 'none';
+  });
   </script>
 </body>
 </html>
