@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Philou te parle</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fdfdfd;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+
+    #start-button {
+      padding: 16px 32px;
+      font-size: 1.2rem;
+      background-color: #6C63FF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    #start-button:hover {
+      background-color: #574fd6;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="start-button">🎤 Démarrer la discussion</button>
+
+  <script>
+    document.getElementById('start-button').addEventListener('click', () => {
+      window.voiceflow = {
+        versionID: "67e26f0e6b6eed36d51ef2bc",
+        assistant: {
+          title: "TAO",
+          color: "#6C63FF"
+        },
+        url: "https://general-runtime.voiceflow.com",
+        enableMic: true
+      };
+
+      const script = document.createElement('script');
+      script.type = "module";
+      script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+      document.body.appendChild(script);
+
+      // Masquer le bouton une fois lancé
+      document.getElementById('start-button').style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
